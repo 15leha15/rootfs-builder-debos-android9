@@ -28,7 +28,7 @@ actions:
   - action: run
     chroot: true
     description: Create directories for Android mounts
-    command: mkdir -p /android /data /system /system_root /vendor /cache /mnt/vendor/persist /userdata
+    command: mkdir -p /android /data /system /system_root /vendor /cache /mnt/vendor/persist /userdata /persist 
 
   - action: run
     chroot: true
