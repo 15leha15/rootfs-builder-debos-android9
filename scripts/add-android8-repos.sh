@@ -23,6 +23,18 @@ apt install -y bluebinder ofono-ril-binder-plugin pulseaudio-modules-droid-28
 apt remove -y qtubuntu-sensors
 apt install -y libsensorfw-qt5-hybris libsensorfw-qt5-configs libsensorfw-qt5-plugins libqt5sensors5-sensorfw
 
+# hfd
+apt install -y hfd-service libqt5feedback5-hfd hfd-service-tools
+
+mkdir -p /root/hfd
+wget https://build.lolinet.com/file/hfd/hfd-service-tools_0.1.0_armhf.deb -P /root/hfd/
+wget https://build.lolinet.com/file/hfd/hfd-service_0.1.0_armhf.deb -P /root/hfd/
+wget https://build.lolinet.com/file/hfd/libqt5feedback5-hfd_0.1.0_armhf.deb -P /root/hfd/
+wget https://build.lolinet.com/file/hfd/qml-module-hfd_0.1.0_armhf.deb -P /root/hfd/
+
+dpkg -i /root/hfd/*.deb
+rm -rf /root/hfd
+
 # Restore symlink
 rm /etc/resolv.conf
 mv /etc/resolv2.conf /etc/resolv.conf
